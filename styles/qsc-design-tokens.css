@@ -1,0 +1,38 @@
+# QSC Solutions Brand Tokens
+
+Use these exact brand values for QSC branded designs and interfaces.
+
+```css
+:root {
+  --qsc-orange: #FF7A38;
+  --qsc-magenta: #FF1E67;
+  --qsc-violet: #5B1865;
+  --qsc-charcoal: #111111;
+  --qsc-black: #000000;
+  --qsc-white: #FFFFFF;
+
+  --qsc-brand-gradient: linear-gradient(120deg, #FF7A38 0%, #FF1E67 50%, #5B1865 100%);
+
+  --qsc-radius-sm: 10px;
+  --qsc-radius-md: 18px;
+  --qsc-radius-lg: 28px;
+
+  --qsc-space-1: 0.25rem;
+  --qsc-space-2: 0.5rem;
+  --qsc-space-3: 0.75rem;
+  --qsc-space-4: 1rem;
+  --qsc-space-6: 1.5rem;
+  --qsc-space-8: 2rem;
+  --qsc-space-12: 3rem;
+
+  --qsc-font-family-sans: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --qsc-font-weight-regular: 400;
+  --qsc-font-weight-semibold: 600;
+  --qsc-font-weight-bold: 700;
+
+  --qsc-border-soft: 1px solid rgba(91, 24, 101, 0.15);
+  --qsc-shadow-soft: 0 12px 32px rgba(17, 17, 17, 0.08);
+}
+```
+
+Keep the values exact and use them instead of repeating ad hoc hex values across the codebase.
