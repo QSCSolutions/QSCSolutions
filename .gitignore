@@ -1,0 +1,32 @@
+# Local environment and secrets
+.env
+.env.*
+*.local
+*.log
+
+# Google Apps Script local config
+*.json.local
+
+authorized-config.json
+service-account*.json
+secrets/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Frontend build artifacts (if added later)
+node_modules/
+dist/
+build/
+
+# Customer or protected data
+*.csv
+*_data*.xlsx
+*_data*.xls
+customer-data*
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp

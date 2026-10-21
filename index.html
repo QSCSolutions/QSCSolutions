@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="QSC Solutions Collection Management Portal for applicant search, customer profile review and collection updates."
+    />
+    <title>QSC Solutions | Collection Management Portal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container header-inner">
+        <div class="brand-block" aria-label="QSC Solutions home">
+          <div class="brand-mark" aria-hidden="true">
+            <span class="mark-dot orange"></span>
+            <span class="mark-dot magenta"></span>
+            <span class="mark-dot violet"></span>
+          </div>
+          <div class="brand-text">
+            <div class="brand-name">QSC Solutions</div>
+            <div class="brand-tag">QUALITY SPEED CONSISTENCY</div>
+          </div>
+        </div>
+
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="#search-section">Search</a>
+          <a href="#profile-section">Profile</a>
+          <a href="#collection-form">Update</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container app-shell">
+      <section id="search-section" class="panel search-panel" aria-labelledby="search-heading">
+        <div class="section-heading-row">
+          <div>
+            <p class="eyebrow">Operations</p>
+            <h1 id="search-heading">Collection Management Portal</h1>
+          </div>
+        </div>
+
+        <div class="search-controls" role="search">
+          <label class="sr-only" for="search-input">Search by application ID or applicant name</label>
+          <div class="search-field-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input
+              id="search-input"
+              type="text"
+              autocomplete="off"
+              placeholder="Search by Application ID or Applicant Name"
+              aria-describedby="search-status"
+            />
+            <div id="search-loading" class="search-loading hidden" aria-live="polite">
+              <span class="spinner"></span>
+              Loading...
+            </div>
+          </div>
+        </div>
+
+        <div id="search-status" class="status-message info" aria-live="polite">
+          Begin typing at least 3 characters to search.
+        </div>
+
+        <div id="search-results" class="suggestions" aria-live="polite" aria-label="Search suggestions"></div>
+      </section>
+
+      <section id="profile-section" class="panel profile-panel hidden" aria-live="polite">
+        <div class="section-heading-row profile-heading-row">
+          <div>
+            <p class="eyebrow">Applicant</p>
+            <h2>Customer Profile</h2>
+          </div>
+        </div>
+
+        <div id="profile-content"></div>
+      </section>
+
+      <section id="collection-form" class="panel form-panel hidden" aria-labelledby="update-heading">
+        <div class="section-heading-row">
+          <div>
+            <p class="eyebrow">Collection update</p>
+            <h2 id="update-heading">Record Collection Outcome</h2>
+          </div>
+        </div>
+
+        <form id="update-form" novalidate>
+          <div class="form-grid">
+            <div class="field-group">
+              <label for="selected-application-id">Application ID</label>
+              <input id="selected-application-id" name="selectedApplicationId" type="text" readonly />
+            </div>
+
+            <div class="field-group">
+              <label for="short-code">Short Code</label>
+              <select id="short-code" name="shortCode" required>
+                <option value="">Select a short code</option>
+                <option value="Promise to Pay">Promise to Pay</option>
+                <option value="Refuse to Pay">Refuse to Pay</option>
+                <option value="Dispute">Dispute</option>
+                <option value="Shifted">Shifted</option>
+                <option value="Wrong Address">Wrong Address</option>
+                <option value="Found Lock">Found Lock</option>
+                <option value="Paid as per Customer">Paid as per Customer</option>
+                <option value="Paid">Paid</option>
+                <option value="Wrong/Invalid Number">Wrong/Invalid Number</option>
+                <option value="Switch off">Switch off</option>
+                <option value="Phone Disconnected">Phone Disconnected</option>
+                <option value="Concern person not available">Concern person not available</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="remarks">Remarks</label>
+            <textarea
+              id="remarks"
+              name="remarks"
+              rows="5"
+              minlength="10"
+              maxlength="500"
+              placeholder="Enter a clear update about the collection outcome."
+              required
+            ></textarea>
+            <div class="field-helper">
+              Minimum 10 characters. Maximum 500 characters.
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="submit-button" class="primary-button">Submit Collection Update</button>
+          </div>
+        </form>
+
+        <div id="form-status" class="status-message info" aria-live="polite">
+          Select a customer and complete the update details before submitting.
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
